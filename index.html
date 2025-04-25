@@ -69,15 +69,15 @@
                 border-radius: 50%; /* Makes the shape circular */
                 animation: pulse 2s infinite ease-in-out; /* Apply pulsing animation */
                 position: absolute;
-                right: 2px;
-                bottom: 2px;
+                right: 1px;
+                bottom: 1px;
             }
 
             #chat-container {
                 flex-grow: 1;
                 /* overflow-y: auto; */
-                padding: 15px;
-                background-color: #6dff96;
+                padding: 15px 15px 0px 15px;
+                background-color: #badef6;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -116,13 +116,8 @@
             }
 
             .user {
-                background: linear-gradient(
-                    90deg,
-                    #4d68f9 0%,
-                    #7389ff 50%,
-                    #4d68f9 100%
-                );
-                color: white;
+                background: #fffdec;
+                color: #000;
                 padding: 8px 15px;
                 border-radius: 8px;
                 align-self: flex-end;
@@ -183,15 +178,15 @@
                 max-width: 430px;
                 display: flex;
                 flex-direction: column;
-                padding: 15px;
+                padding: 0 15px 15px 15px;
             }
 
             .answer-button {
                 background-color: #000;
-                color: #6dff96;
+                color: #badef6;
                 border: none;
-                height: 60px;
-                border-radius: 16px;
+                height: 50px;
+                border-radius: 8px;
                 cursor: pointer;
                 margin-bottom: 8px;
                 font-size: 16px;
@@ -304,13 +299,17 @@
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
-                            fill="currentColor"
+                            fill="#1a1a1a"
+                            stroke="#1a1a1a"
+                            stroke-width="1"
                             class="bi bi-chevron-left"
                             viewBox="0 0 16 16"
                         >
                             <path
                                 fill-rule="evenodd"
                                 d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
                             />
                         </svg>
                     </div>
@@ -346,7 +345,7 @@
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
                             height="16"
-                            fill="currentColor"
+                            fill="#1a1a1a"
                             class="bi bi-three-dots-vertical"
                             viewBox="0 0 16 16"
                         >
@@ -359,9 +358,13 @@
             </div>
 
             <div class="message-container" id="chat-container">
-              <div class="system-message">
-                <p>Welcome to the best site for finding new connections, chatting, and exchanging gifts. We have many great options for you, start chatting with Angeliсa!</p>
-              </div>
+                <div class="system-message">
+                    <p>
+                        Welcome to the best site for finding new connections,
+                        chatting, and exchanging gifts. We have many great
+                        options for you, start chatting with Angeliсa!
+                    </p>
+                </div>
                 <!-- Offers Select -->
                 <div
                     class="third_page step-page"
@@ -514,6 +517,33 @@
             </div>
 
             <div id="answer-buttons" class="answer-buttons"></div>
+
+            <div class="type-message-container">
+                <div class="right-chevron-container">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="#1a1a1a"
+                        stroke="#1a1a1a"
+                        stroke-width="1"
+                        class="bi bi-chevron-right"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+                        />
+                    </svg>
+                </div>
+                <div class="type-container">
+                    <p>Type your message</p>
+                    <p>😁</p>
+                </div>
+                <div class="send-button">
+                    <img src="images/send-svgrepo-com.svg" alt="">
+                </div>
+            </div>
         </div>
 
         <script>
