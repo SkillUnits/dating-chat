@@ -131,7 +131,7 @@ ul li {
 
 .system-message {
     background-color: #c5c5c5;
-    color: #003366;
+    color: #000;
     border-radius: 4px;
     padding: 16px 10px;
     margin-bottom: 12px;
@@ -139,16 +139,25 @@ ul li {
     opacity: 0.8;
     font-size: 16px;
 }
-.system-message .title {
+.quiz-system-message {
+    color: #0a2a43;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin-bottom: 12px;
+    text-align: center;
+    opacity: 0.8;
+    font-size: 16px;
+}
+.quiz-system-message .title {
     text-align: center;
     font-weight: 700;
 }
-.system-message .subtitle {
-    color: #003366;
+.quiz-system-message .subtitle {
+    color: #0a2a43;
     margin-bottom: 12px;
     text-align: center;
     font-weight: 400;
-    margin: 10px 0 0;
+    margin: 10px 0;
 }
 .system-message p {
     margin: 0;
