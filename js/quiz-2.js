@@ -32,7 +32,8 @@ class Action {
 }
 
 const endingFlow = new Flow([
-    new OperMessage("We’ve found <strong>over 1500 candidates</strong> who are perfect for you! Answer a few <strong>last questions</strong> so we can find the ideal partner.", [
+    new OperMessage("We’ve found <strong>over 1500 candidates</strong> who are perfect for you! Answer a few <strong>last questions</strong> so we can find the ideal partner.", null, null),
+    new OperMessage(`<img src="../images/photos.png">`, [
         new Answer("Start matchmaking now!", null, null)
     ], null),
 ]);
@@ -160,6 +161,11 @@ function showOperatorMessage() {
         setTimeout(() => {
             // Show operator message
             operatorMessageDiv.innerHTML = message.operMessage;
+
+            if (message.operMessage && message.operMessage.includes("<img") || message.operMessage && message.operMessage.includes("<video")) {
+                operatorMessageDiv.classList.remove("operator");
+                operatorMessageDiv.classList.add("message-image-wrapper");
+            }
 
             if (message.userAnswers && message.userAnswers.length > 0) {
                 // Show answer buttons

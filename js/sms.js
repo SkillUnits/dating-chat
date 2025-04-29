@@ -34,6 +34,8 @@ class Action {
 
 
 const endMessageFlow = new Flow([
+    new OperMessage("You're a great conversationalist, I'm enjoying talking to you, here's a gift for you.", null, null),
+    new OperMessage(`<img src="../images/diamond.png" class="message-image">`, null, null),
     new OperMessage("Go to the site, register, and start chatting with me!", null, null),
     new OperMessage("I’m waiting for you here! Click the button and let’s get to know each other better!", [
         new Answer("Message me ❤️", null, null),
@@ -84,6 +86,10 @@ const goodDayInterestsFlow = new Flow([
 
 // Flows
 const mainFlow = new Flow([
+    new OperMessage(`<video autoplay muted playsinline class="message-video">
+                    <source src="images/first_message.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>`, null, null),
     new OperMessage("Hi! 👋 How’s your day going?", [
         new Answer("Everything’s great! How’s your day?", new Action(Action.actionChangeFlow, goodDayInterestsFlow), "have_credits"),
         new Answer("Not the best, but I’m trying to cheer up.", new Action(Action.actionChangeFlow, badDayInterestsFlow), "no_credits"),
@@ -172,7 +178,12 @@ function showOperatorMessage() {
 
         setTimeout(() => {
             // Show operator message
-            operatorMessageDiv.textContent = message.operMessage;
+            operatorMessageDiv.innerHTML = message.operMessage;
+
+            if (message.operMessage && message.operMessage.includes("<img") || message.operMessage && message.operMessage.includes("<video")) {
+                operatorMessageDiv.classList.remove("operator");
+                operatorMessageDiv.classList.add("message-image-wrapper");
+            }
 
             if (message.userAnswers && message.userAnswers.length > 0) {
                 // Show answer buttons
