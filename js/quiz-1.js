@@ -33,7 +33,7 @@ class Action {
 
 const endingFlow = new Flow([
     new OperMessage("We have <strong>over 1000 candidates</strong> who match your preferences. Answer a few <strong>final questions</strong> so we can find the perfect match for you.", null, null),
-    new OperMessage(`<img src="../images/photos.png">`, [
+    new OperMessage(`<img src="images/photos.png">`, [
         new Answer("See candidates!", null, null)
     ], null),
 ]);
