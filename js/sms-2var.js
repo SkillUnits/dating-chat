@@ -86,10 +86,17 @@ const goodDayInterestsFlow = new Flow([
 
 // Flows
 const mainFlow = new Flow([
-    new OperMessage(`<video autoplay muted playsinline class="message-video">
-                    <source src="images/first_message_2var.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`, null, null),
+    new OperMessage(`<div class="video-wrapper">
+            <video id="intro-video" autoplay muted playsinline class="message-video"
+            onended="document.getElementById('replay-button').style.display = 'block';">
+                <source src="images/first_message_2var.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="replay-button" class="replay-button" style="display: none"
+            onclick="document.getElementById('intro-video').currentTime = 0; document.getElementById('intro-video').play(); this.style.display = 'none';">
+                <img src="images/replay-svgrepo-com.svg" alt="Replay">
+            </button>
+        </div>`, null, null),
     new OperMessage("Hi! 👋 How’s your day going?", [
         new Answer("Everything’s great! How’s your day?", new Action(Action.actionChangeFlow, goodDayInterestsFlow), "have_credits"),
         new Answer("Not the best, but I’m trying to cheer up.", new Action(Action.actionChangeFlow, badDayInterestsFlow), "no_credits"),
@@ -199,7 +206,7 @@ function showOperatorMessage() {
                 proceedToNextMessage();
                 scrollToBottom();
             }
-        }, Math.random() * 1000 + 1000); // random delay between 1500ms and 2500ms
+        }, Math.random() * 1000 + 3000); // random delay between 3000ms and 4000ms
     }
 }
 

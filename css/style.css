@@ -264,3 +264,30 @@ ul li {
     text-align: center;
     animation: fadeIn 0.6s forwards;
 }
+
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.replay-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    min-width: 35px;
+    min-height: 35px;
+    padding: 3px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.replay-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+.replay-button img {
+    width: 20px;
+}
