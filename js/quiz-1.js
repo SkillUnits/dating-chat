@@ -165,7 +165,7 @@ function showOperatorMessage() {
                 proceedToNextMessage();
                 scrollToBottom();
             }
-        }, Math.random() * 1000 + 3000); // random delay between 3000ms and 4000ms
+        }, Math.random() * 1000 + 1000); // random delay between 3000ms and 4000ms
     }
 }
 
