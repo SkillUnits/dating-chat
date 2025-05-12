@@ -93,7 +93,13 @@ const mainFlow = new Flow([
                 Your browser does not support the video tag.
             </video>
             <button id="replay-button" class="replay-button" style="display: none"
-            onclick="document.getElementById('intro-video').currentTime = 0; document.getElementById('intro-video').play(); this.style.display = 'none';">
+            onclick="
+                const video = document.getElementById('intro-video');
+                video.muted = false;
+                video.currentTime = 0;
+                video.play();
+                this.style.display = 'none';
+            ">
                 <img src="images/replay-svgrepo-com.svg" alt="Replay">
             </button>
         </div>`, null, null),
