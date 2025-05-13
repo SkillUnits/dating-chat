@@ -86,20 +86,33 @@ const goodDayInterestsFlow = new Flow([
 
 // Flows
 const mainFlow = new Flow([
-    new OperMessage(`<div class="video-wrapper">
-            <video id="intro-video" autoplay muted playsinline class="message-video"
-            onended="document.getElementById('replay-button').style.display = 'block';">
-                <source src="images/first_message_2var.MP4" type="video/mp4">
+    new OperMessage(`<div class="video-wrapper" style="position: relative;">
+            <video id="intro-video" playsinline class="message-video"
+                onended="document.getElementById('replay-button').style.display = 'block';">
+                <source src="images/first_message_2var.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+
+            <!-- Кнопка першого запуску відео -->
+            <button id="play-button" class="video-play-button"
+                onclick="
+                    const video = document.getElementById('intro-video');
+                    video.muted = false;
+                    video.play();
+                    this.style.display = 'none';
+                ">
+                ▶
+            </button>
+
+            <!-- Кнопка повтору -->
             <button id="replay-button" class="replay-button" style="display: none"
-            onclick="
-                const video = document.getElementById('intro-video');
-                video.muted = false;
-                video.currentTime = 0;
-                video.play();
-                this.style.display = 'none';
-            ">
+                onclick="
+                    const video = document.getElementById('intro-video');
+                    video.muted = false;
+                    video.currentTime = 0;
+                    video.play();
+                    this.style.display = 'none';
+                ">
                 <img src="images/replay-svgrepo-com.svg" alt="Replay">
             </button>
         </div>`, null, null),
