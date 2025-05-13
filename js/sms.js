@@ -86,38 +86,36 @@ const goodDayInterestsFlow = new Flow([
 
 // Flows
 const mainFlow = new Flow([
-    new OperMessage(`
-        <div class="video-wrapper" style="position: relative;">
-            <video id="intro-video" playsinline class="message-video"
-                onended="document.getElementById('replay-button').style.display = 'block';">
-                <source src="images/first_message.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    new OperMessage(`<div class="video-wrapper" style="position: relative;">
+        <video id="intro-video" playsinline class="message-video" poster="images/preview.jpg"
+            onended="document.getElementById('replay-button').style.display = 'block';">
+            <source src="images/first_message.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-            <!-- Кнопка першого запуску відео -->
-            <button id="play-button" class="video-play-button"
-                onclick="
-                    const video = document.getElementById('intro-video');
-                    video.muted = false;
-                    video.play();
-                    this.style.display = 'none';
-                ">
-                ▶
-            </button>
+        <!-- Кнопка першого запуску відео -->
+        <button id="play-button" class="video-play-button"
+            onclick="
+                const video = document.getElementById('intro-video');
+                video.muted = false;
+                video.play();
+                this.style.display = 'none';
+            ">
+            <img src="images/play-button-svgrepo-com.svg" alt="Play">
+        </button>
 
-            <!-- Кнопка повтору -->
-            <button id="replay-button" class="replay-button" style="display: none"
-                onclick="
-                    const video = document.getElementById('intro-video');
-                    video.muted = false;
-                    video.currentTime = 0;
-                    video.play();
-                    this.style.display = 'none';
-                ">
-                <img src="images/replay-svgrepo-com.svg" alt="Replay">
-            </button>
-        </div>
-    `, null, null),
+        <!-- Кнопка повтору -->
+        <button id="replay-button" class="replay-button" style="display: none"
+            onclick="
+                const video = document.getElementById('intro-video');
+                video.muted = false;
+                video.currentTime = 0;
+                video.play();
+                this.style.display = 'none';
+            ">
+            <img src="images/replay-svgrepo-com.svg" alt="Replay">
+        </button>
+    </div>`, null, null),
     new OperMessage("Hi! 👋 How’s your day going?", [
         new Answer("Everything’s great! How’s your day?", new Action(Action.actionChangeFlow, goodDayInterestsFlow), "have_credits"),
         new Answer("Not the best, but I’m trying to cheer up.", new Action(Action.actionChangeFlow, badDayInterestsFlow), "no_credits"),

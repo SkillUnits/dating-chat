@@ -101,7 +101,7 @@ const mainFlow = new Flow([
                     video.play();
                     this.style.display = 'none';
                 ">
-                ▶
+                <img src="images/play-button-svgrepo-com.svg" alt="Play">
             </button>
 
             <!-- Кнопка повтору -->
