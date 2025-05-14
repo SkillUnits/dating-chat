@@ -110,6 +110,7 @@ ul li {
     width: 100%;
     height: 100%;
     border-radius: 100%;
+    object-fit: cover;
 }
 .operator-name-container p {
     margin-left: 6px;
@@ -215,7 +216,7 @@ ul li {
     min-width: 38px;
     min-height: 38px;
     border-radius: 100%;
-    background: #73a5e0;
+    background: #1D68CE;
     display: flex;
     justify-content: center;
     align-items: center;

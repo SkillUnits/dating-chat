@@ -87,9 +87,9 @@ const goodDayInterestsFlow = new Flow([
 // Flows
 const mainFlow = new Flow([
     new OperMessage(`<div class="video-wrapper" style="position: relative;">
-        <video id="intro-video" playsinline class="message-video" poster="images/preview.jpg"
+        <video id="intro-video" playsinline class="message-video"
             onended="document.getElementById('replay-button').style.display = 'block';">
-            <source src="images/first_message.mp4" type="video/mp4">
+            <source src="images/first_message_2var.MP4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
