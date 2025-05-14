@@ -34,8 +34,6 @@ class Action {
 
 
 const endMessageFlow = new Flow([
-    new OperMessage("You're a great conversationalist, I'm enjoying talking to you, here's a gift for you.", null, null),
-    new OperMessage(`<img src="images/diamond.png" class="message-image">`, null, null),
     new OperMessage("Go to the site, register, and start chatting with me!", null, null),
     new OperMessage("I’m waiting for you here! Click the button and let’s get to know each other better!", [
         new Answer("Message me ❤️", null, null),
@@ -57,6 +55,8 @@ const transitionToPrivateFlow = new Flow([
 ]);
 
 const yesQuestionFlow = new Flow([
+    new OperMessage("You're a great conversationalist, I'm enjoying talking to you, here's a gift for you.", null, null),
+    new OperMessage(`<img src="images/diamond.png" class="message-image">`, null, null),
     new OperMessage("We have a lot in common! Do you believe in love at first sight, or do you think it’s more about mutual understanding over time?", [
         new Answer("I believe in it! Sometimes things happen quickly and unexpectedly.", new Action(Action.actionChangeFlow, transitionToPrivateFlow), null),
         new Answer("I think true love needs to be built over time.", new Action(Action.actionChangeFlow, transitionToPrivateFlow), null),
